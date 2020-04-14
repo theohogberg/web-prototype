@@ -1,0 +1,79 @@
+.menu-wrapper {
+   position: relative;
+}
+.navigation-link .active{
+   color:white;
+}
+.header {
+   position: absolute;
+   left: 0;
+   top: 0;
+   height: 0;
+   width: 100%;
+}
+.menu-container {
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   width: 100%;
+   height: 100%;
+   z-index: 998;
+   background-image: linear-gradient(to left top, #44516e, #606a84, #7d859a, #9ba1b1, #b9bdc8);
+   transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);
+   transform-origin: left;
+   overflow: hidden;
+   padding: 2rem 0;
+   transform: translateX(-100%);
+   display: flex;
+   flex-direction: column;
+   &__bottom,
+   &__middle,
+   &__top {
+      width: 55%;
+      margin: 0 auto;
+   }
+   &.open {
+      transform: translateX(0);
+   }
+   &__bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      @include device('tablet') {
+         justify-content: flex-start;
+         align-items: flex-start;
+         flex: 1;
+      }
+   }
+   &__middle {
+      flex: 6;
+
+      @include device('tablet') {
+         flex: 2;
+      }
+   }
+   &__top {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      @include device('tablet') {
+         flex: 0.75;
+      }
+   }
+}
+.menu-email,.menu-phone  {
+   font-weight: bold;
+   font-size: ms(0);
+   @include device('tablet') {
+      font-size: ms(1);
+   }
+   a {
+      color: #38362e;
+   }
+}
+.menu-email {
+   text-decoration: underline;
+}

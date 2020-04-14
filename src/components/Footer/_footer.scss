@@ -1,0 +1,136 @@
+footer {
+   width: 100%;
+   background-image: linear-gradient(to top, #0f1a33, #111d39, #12203e, #142344, #16264a);
+   padding: 60px 0;
+   display: grid;
+   grid-template-columns: repeat(12, 1fr);
+   grid-column-gap: 1em;
+   grid-row-gap: 1em;
+   .footer-inner {
+      grid-column: 2 / span 10;
+      &__upper {
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         @include device('tablet') {
+            max-width: 351px;
+            flex-direction: row;
+            margin: 0 auto 60px auto;
+         }
+      }
+      &__lower {
+         @include device('tablet') {
+            max-width: 351px;
+            margin: 0 auto;
+         }
+      }
+   }
+   .copyright {
+      width: 70%;
+      margin: 0 auto;
+      font-size: ms(0);
+      line-height: 1.25;
+      font-weight: 300;
+      text-align: center;
+      color: #a6a6a6;
+      @include device('tablet') {
+         width: 100%;
+         font-size: ms(-1);
+      }
+   }
+}
+
+.footer-address {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    a {
+        display: block;
+        color: #FFF;
+        position: relative;
+        margin: 0 0 20px 0;
+        &::after {
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            content: '';
+            height: 3px;
+            width: 50px;
+            background-color: #c26720;
+            transition: all 300ms ease;
+         }
+         @include device('desktop') {
+            &:hover {
+               &::after {
+                  width: 100px;
+               }
+            }
+         }
+    }
+   .address {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      color: #ffffff;
+      
+      &__title {
+         font-weight: 300;
+         margin: 0 0 18px 0;
+      }
+      &__field {
+         font-weight: 600;
+         margin: 0;
+      }
+   }
+   .map-link {
+      margin: 0 0 40px 0;
+      @include device('tablet') {
+         margin: 0;
+      }
+      a {
+         text-align: left;
+         color: #ffffff;
+         text-decoration: none;
+         position: relative;
+         
+      }
+   }
+}
+.footer-socialmedia {
+   width: 70%;
+   height: 40px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   margin: 40px auto;
+   @include device('tablet') {
+      flex-direction: column;
+      width: auto;
+      height: auto;
+      margin: 0;
+   }
+   .link {
+      display: block;
+      transition: all 200ms ease;
+   }
+}
+
+.instagram:hover {
+   opacity: 0.80;
+}
+
+.facebook:hover {
+   opacity: 0.80;
+}
+
+.github:hover {
+   opacity: 0.80;
+}
+
+.linkedin:hover {
+   opacity: 0.80;
+}
+.social-media-logos {
+   border-radius: 8px;
+   padding: 1px;
+}

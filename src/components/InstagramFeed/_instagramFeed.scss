@@ -1,0 +1,119 @@
+.instagram-feed {
+   background-color: #fafafa;
+   width: 100%;
+   &__inner {
+      width: 90%;
+      margin: 0 auto;
+      @include device('desktop') {
+         width: 100%;
+      }
+   }
+   .top-link {
+      width: 156px;
+      color: #1e1e1e;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      padding: 24px 0;
+      @include device('desktop') {
+         padding: 42px 0;
+      }
+      .instagram-icon {
+         height: 32px;
+         width: 32px;
+      }
+      .account {
+         margin: 0;
+         font-size: ms(2);
+         font-weight: bold;
+         font-style: normal;
+         font-stretch: normal;
+         line-height: normal;
+         letter-spacing: normal;
+         color: #1e1e1e;
+         margin: 0 0 0 10px;
+      }
+   }
+   .scrolling-wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      margin: 0 0 62px 0;
+      @include device('desktop-large') {
+         overflow-x: hidden;
+         width: 1200px;
+         margin: 0 auto 84px auto;
+      }
+      .temp-image {
+         background-color: aliceblue;
+      }
+      .temp-image,
+      .insta-image {
+         flex: 0 0 auto;
+         cursor: pointer;
+         width: 140px;
+         height: 140px;
+         position: relative;
+         margin: 10px 20px 10px 0;
+         overflow: hidden;
+         @include device('tablet') {
+            width: 180px;
+            height: 180px;
+         }
+         @include device('desktop') {
+            margin: 10px;
+         }
+         a {
+            .instagram-image {
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               height: 100%;
+               width: auto;
+               transform: translate(-50%, -50%);
+            }
+            .video-icon {
+               position: absolute;
+               top: 4px;
+               right: 4px;
+               width: 20px;
+               height: 20px;
+            }
+         }
+
+         .insta-image-hover {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 200ms ease-in-out;
+            background-color: rgba(0, 0, 0, 0.2);
+            &__inner {
+               color: #fff;
+               text-shadow: 2px 2px 4px #4e6f8c;
+            }
+            .heart-icon,
+            .comment-icon {
+               width: 14px;
+               height: 14px;
+            }
+            .likes,
+            .comments {
+               margin: 0 16px 0 6px;
+            }
+         }
+         @include device('desktop') {
+            &:hover {
+               .insta-image-hover {
+                  opacity: 1;
+               }
+            }
+         }
+      }
+   }
+}

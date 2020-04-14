@@ -1,0 +1,35 @@
+.media__root {
+   display: block;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+.media__media {
+   width: 100%;
+}
+
+.media__img {
+   object-fit: cover;
+}
+
+.media__skeleton {
+   min-width: 100px;
+   min-height: 100px;
+   background: #f1f1f1;
+}
+
+.media__absolute-cover {
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+
+   &.media__media {
+      /* if component is 'picture' */
+      img {
+         width: 100%;
+      }
+   }
+}

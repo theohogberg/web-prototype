@@ -1,0 +1,26 @@
+.featured-prose {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   &__text {
+      color: #1e1e1e;
+      @include device('tablet') {
+         line-height: 1.4;
+      }
+   }
+   &__point {
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      background-color: #003439;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+      margin: 3rem auto;
+      @include device('tablet') {
+         margin: 5rem auto;
+         width: 18px;
+         height: 18px;
+         border-radius: 9px;
+         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+      }
+   }
+}

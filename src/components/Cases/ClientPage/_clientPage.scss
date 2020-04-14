@@ -1,0 +1,227 @@
+.client-cases{
+    margin-bottom: 5%;
+}
+.case-list {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+
+    @include device('tablet') {
+        width: 90%;
+    }
+
+    .case {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &.active {
+            .case__inner { 
+                background: rgba(54, 54, 54, 0.90);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .case__content {
+                height: auto;
+                width: 100%;
+                height: auto;
+                margin-top: 0;
+
+                @include device('tablet') {
+                    height: 100%;
+                    margin-top: 10%;
+                }
+
+                .case__title {
+                    text-align: center;
+                }
+            }
+
+            .case__excerpt {
+                display: none;
+
+                @include device('tablet') {
+                    display: block;
+                }
+            }
+        }
+
+        @include device('desktop') {
+
+            &:hover {
+                .case__inner {
+                    -webkit-box-shadow: 6px 6px 17px -4px rgba(0, 0, 0, 0.75);
+                    -moz-box-shadow: 6px 6px 17px -4px rgba(0, 0, 0, 0.75);
+                    box-shadow: 6px 6px 17px -4px rgba(0, 0, 0, 0.75);
+                    background: rgba(54, 54, 54, 0.90);
+                }
+                .case__title {
+                    background: none;
+                }
+
+                .case__content {
+                    height: 100%;
+                    margin-top: 10%;
+                }
+
+                .case__excerpt {
+                    display: none;
+
+                    @include device('tablet') {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .case__inner {
+            border-radius: 1vh;
+            color: #FFF;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            padding: 0 10%;
+            transition: all 600ms ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .case__content {
+            width: 100%;
+            height: 100%;
+            transition: all 600ms ease;
+            border-radius: 1vh;
+
+            @include device('tablet') {
+                height: 100%;
+            }
+
+            @include device('desktop') {
+                height: 100%;
+            }
+        }
+
+        .case__title {
+            background: rgba(54, 54, 54, 0.60);
+            border-radius: 1vh;
+            width: fit-content;
+            text-align: center;
+            left: 10%;
+            padding: 1vh;
+            font-size: ms(1);
+            word-break: break-word;
+
+            @include device('tablet') {
+                font-size: ms(2);
+            }
+        }
+
+        .case__excerpt {
+            display: none;
+            font-size: ms(1);
+
+            @include device('desktop') {
+                font-size: ms(2);
+            }
+        }
+
+        &--home {
+            grid-column: span 6;
+            height: 175px;
+
+            @include device('tablet') {
+                height: 460px;
+            }
+
+            @include device('desktop') {
+                height: 620px;
+            }
+        }
+
+        &--full {
+            grid-column: span 6;
+            height: 175px;
+
+            @include device('tablet') {
+                height: 415px;
+                grid-column: span 4;
+            }
+
+            .case__excerpt {
+                display: none;
+                font-size: ms(1);
+
+                @include device('desktop') {
+                    font-size: ms(1);
+                }
+            }
+        }
+    }
+}
+
+
+.case-placeholder {
+    grid-column: span 6;
+    height: 175px;
+    background-color: #424242;
+
+    @include device('tablet') {
+        height: 415px;
+        grid-column: span 4;
+    }
+}
+
+.case-categories {
+   width: 90%;
+   margin: 60px auto 40px auto;
+   &-menu {
+      ul {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: flex-start;
+         li {
+            margin: 0 ms(1) 14px 0;
+
+            a {
+	            line-height: 1.44;
+               font-size: ms(1);
+               color: #424242;
+            }
+            &.active {
+               a {
+                  
+                  position: relative;
+                  &:after {
+                     position: absolute;
+                     left: 0;
+                     bottom: -3px;
+                     content: '';
+                     width: 100%;
+                     height: 2px;
+                     background-color: #424242;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+.case-list
+.case--full 
+.case__excerpt {
+   font-size: 1rem;
+   border-radius: 1vh;
+}
+
+.client-title {
+    margin-bottom: 30px;
+}

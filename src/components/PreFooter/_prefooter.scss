@@ -1,0 +1,134 @@
+.pre-footer__background {
+  background-image: linear-gradient(to top, #16264a, #223053, #2d3b5c, #384665, #44516e);
+  //background-image: linear-gradient(to top, #2d3b5c, #334060, #384665, #3e4b69, #44516e);
+  color: white;
+}
+
+.pre-footer {
+  width: 100%;
+  &__background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__inner {
+    color: inherit;
+    padding: 40px 0 60px 0;
+    width: 80%;
+    @include device('tablet') {
+      padding: 96px 0 144px 0;
+      width: auto;
+    }
+  }
+  .line1 {
+    text-align: center;
+    font-size: ms(0);
+    color: inherit; 
+    opacity: 0.95;
+    margin-top: 0;
+    margin-bottom: 12px;
+    @include device('tablet') {
+      font-size: ms(0);
+      text-align: center;
+    }
+  }
+  .line2 {
+    text-align: center;
+    font-size: ms(2);
+    line-height: ms(2);
+    font-weight: bold; 
+    margin-top: 0;
+    @include device('tablet') {
+      font-size: ms(2);
+      text-align: center;
+    }
+  }
+  .blend {
+    position: relative; // Make position relative
+    width: auto;
+    height: auto;
+
+    &::before { // Apply blend mode to this pseudo element
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      background-color: #ffffff;
+      mix-blend-mode: overlay;
+      opacity: 0.5;
+    }
+    transition: all 500ms ease;
+    @include device('tablet') {
+      &:hover {
+
+         .link {
+            opacity: 0;
+         }
+         .link-animation {
+            opacity: 1;
+            span {
+               opacity: 1;
+            }
+            &::after {
+               top: 0;
+               right: 0;
+               content: '';
+               width: 1px;
+               height: 100%;
+            }
+         }
+      }
+    }
+
+  }
+  .link-animation{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 11px;
+    opacity: 0;
+    a {
+      font-size: ms(1);
+    font-weight: bold;
+    color: #acb3bc;
+      mix-blend-mode: unset;
+      text-align: center;
+      @include device('tablet') {
+        font-size: ms(3);
+        line-height: 82px;
+      }
+    }
+    span {
+        opacity: 0;
+    }
+   }
+  .link {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 11px;
+    a {
+      font-size: ms(1);
+    	font-weight: bold;
+    	color: #acb3bc;
+      mix-blend-mode: unset;
+      text-align: center;
+      @include device('tablet') {
+        font-size: ms(3);
+        line-height: 82px;
+      }
+    }
+  }
+}

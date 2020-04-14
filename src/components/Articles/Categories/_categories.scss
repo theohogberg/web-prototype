@@ -1,0 +1,47 @@
+.categories {
+   width: 80%;
+   margin: 0 auto;
+   padding: 0 4em;
+   @include device('tablet') {
+      width: 100%;
+   }
+   &-title {
+      font-size: ms(0);
+      color: #424242;
+      font-weight: 300;
+   }
+   &-menu {
+      ul {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: flex-start;
+         li {
+            margin: 0 ms(1) 14px 0;
+
+            a {
+               line-height: 1.44;
+               font-size: ms(1);
+               color: #5a5a5a;
+               @include device('desktop') {
+                  font-size: ms(0);
+               }
+            }
+            &.active {
+               a {
+                  color: #864516;
+                  position: relative;
+                  &:after {
+                     position: absolute;
+                     left: 0;
+                     bottom: -6px;
+                     content: '';
+                     width: 100%;
+                     height: 3px;
+                     background-color: #864516;
+                  }
+               }
+            }
+         }
+      }
+   }
+}

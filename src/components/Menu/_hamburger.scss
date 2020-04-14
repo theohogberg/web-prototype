@@ -1,0 +1,294 @@
+.hamburger {
+   position: fixed;
+   top: 35px;
+   right: 35px;
+   width: 60px;
+   height: 60px;
+   border-radius: 30px;
+   background-color: rgba(255, 255, 255, 0.6);
+   transition: box-shadow 100ms ease;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   z-index: 9999;
+   cursor: pointer;
+   @include device('desktop') {
+      top: 69px;
+      right: 79px;
+      width: 75px;
+      height: 75px;
+      border-radius: 37.5px;
+   }
+   .hamburger-inner {
+      width: 29px;
+      height: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      @include device('desktop') {
+         height: 27px;
+         width: 40px;
+      }
+   }
+   &__bar1,
+   &__bar2,
+   &__bar3 {
+      background-color: #000;
+      height: 3px;
+      transition: background-color 500ms ease;
+      @include device('desktop') {
+         height: 4px;
+      }
+   }
+   &__bar1 {
+      width: 80%;
+   }
+   &__bar2 {
+      width: 50%;
+      transform-origin: right;
+   }
+   &__bar3 {
+      width: 100%;
+   }
+   &.active {
+      position: fixed;
+      background-color: transparent;
+      .hamburger__bar1,
+      .hamburger__bar2,
+      .hamburger__bar3 {
+         background-color: #38362e;
+      }
+      .hamburger__bar1 {
+         animation-name: BAR1-FORWARD;
+         animation-duration: 0.5s;
+         animation-iteration-count: 1;
+         animation-fill-mode: forwards;
+         @include device('desktop') {
+            animation-name: BAR1-FORWARD-DESKTOP;
+         }
+      }
+      .hamburger__bar2 {
+         animation-name: BAR2-FORWARD;
+         animation-duration: 0.5s;
+         animation-iteration-count: 1;
+         animation-fill-mode: forwards;
+      }
+      .hamburger__bar3 {
+         animation-name: BAR3-FORWARD;
+         animation-duration: 0.5s;
+         animation-iteration-count: 1;
+         animation-fill-mode: forwards;
+         @include device('desktop') {
+            animation-name: BAR3-FORWARD-DESKTOP;
+         }
+      }
+   }
+   @include device('desktop') {
+      &.inactive:hover {
+         box-shadow: 0px 0px 10px black;
+      }
+   }
+
+   &.inactive {
+      .hamburger__bar1 {
+         animation-name: BAR1-REVERSE;
+         animation-duration: 0.5s;
+         animation-iteration-count: 1;
+         animation-fill-mode: forwards;
+         @include device('desktop') {
+            animation-name: BAR1-REVERSE-DESKTOP;
+         }
+      }
+      .hamburger__bar2 {
+         animation-name: BAR2-REVERSE;
+         animation-duration: 0.5s;
+         animation-iteration-count: 1;
+         animation-fill-mode: forwards;
+      }
+      .hamburger__bar3 {
+         animation-name: BAR3-REVERSE;
+         animation-duration: 0.5s;
+         animation-iteration-count: 1;
+         animation-fill-mode: forwards;
+         @include device('desktop') {
+            animation-name: BAR3-REVERSE-DESKTOP;
+         }
+      }
+   }
+}
+
+/*
+   ANIMATION FORWARD
+*/
+@keyframes BAR1-FORWARD {
+   0% {
+      width: 80%;
+      transform: translateY(0) rotate(0deg);
+   }
+   33% {
+      width: 100%;
+      transform: translateY(0) rotate(0deg);
+   }
+   34% {
+      transform: translateY(0) rotate(0deg);
+   }
+   100% {
+      height: 2px;
+      width: 100%;
+      transform: translateY(10px) rotate(45deg);
+   }
+}
+@keyframes BAR1-FORWARD-DESKTOP {
+   0% {
+      width: 80%;
+      transform: translateY(0) rotate(0deg);
+   }
+   33% {
+      width: 100%;
+      transform: translateY(0) rotate(0deg);
+   }
+   34% {
+      transform: translateY(0) rotate(0deg);
+   }
+   100% {
+      height: 4px;
+      width: 100%;
+      transform: translateY(12px) rotate(45deg);
+   }
+}
+@keyframes BAR2-FORWARD {
+   0% {
+      width: 50%;
+   }
+   33% {
+      width: 0;
+   }
+   100% {
+      width: 0;
+   }
+}
+@keyframes BAR3-FORWARD {
+   0% {
+      width: 100%;
+      transform: translateY(0) rotate(0deg);
+   }
+   33% {
+      width: 100%;
+      transform: translateY(0) rotate(0deg);
+   }
+   34% {
+      transform: translateY(0) rotate(0deg);
+   }
+   100% {
+      height: 2px;
+      width: 100%;
+      transform: translateY(-10px) rotate(-45deg);
+   }
+}
+@keyframes BAR3-FORWARD-DESKTOP {
+   0% {
+      width: 100%;
+      transform: translateY(0) rotate(0deg);
+   }
+   33% {
+      width: 100%;
+      transform: translateY(0) rotate(0deg);
+   }
+   34% {
+      transform: translateY(0) rotate(0deg);
+   }
+   100% {
+      height: 4px;
+      width: 100%;
+      transform: translateY(-12px) rotate(-45deg);
+   }
+}
+
+/*
+   ANIMATION REVERSE
+*/
+@keyframes BAR1-REVERSE {
+   100% {
+      width: 80%;
+      transform: translateY(0) rotate(0deg);
+   }
+   66% {
+      width: 100%;
+      transform: translateY(0) rotate(0deg);
+   }
+   65% {
+      transform: translateY(0) rotate(0deg);
+   }
+   0% {
+      height: 2px;
+      width: 100%;
+      transform: translateY(10px) rotate(45deg);
+   }
+}
+@keyframes BAR1-REVERSE-DESKTOP {
+   100% {
+      width: 80%;
+      transform: translateY(0) rotate(0deg);
+   }
+   66% {
+      width: 100%;
+      transform: translateY(0) rotate(0deg);
+   }
+   65% {
+      transform: translateY(0) rotate(0deg);
+   }
+   0% {
+      height: 4px;
+      width: 100%;
+      transform: translateY(12px) rotate(45deg);
+   }
+}
+@keyframes BAR2-REVERSE {
+   100% {
+      width: 50%;
+   }
+   66% {
+      width: 0;
+   }
+   0% {
+      width: 0;
+   }
+}
+@keyframes BAR3-REVERSE {
+   100% {
+      width: 100%;
+      transform: translateY(0) rotate(0deg);
+   }
+   66% {
+      width: 100%;
+      transform: translateY(0) rotate(0deg);
+   }
+   65% {
+      transform: translateY(0) rotate(0deg);
+   }
+   0% {
+      height: 2px;
+      width: 100%;
+      transform: translateY(-10px) rotate(-45deg);
+   }
+}
+@keyframes BAR3-REVERSE-DESKTOP {
+   100% {
+      width: 100%;
+      transform: translateY(0) rotate(0deg);
+   }
+   66% {
+      width: 100%;
+      transform: translateY(0) rotate(0deg);
+   }
+   65% {
+      transform: translateY(0) rotate(0deg);
+   }
+   0% {
+      height: 4px;
+      width: 100%;
+      transform: translateY(-12px) rotate(-45deg);
+   }
+}

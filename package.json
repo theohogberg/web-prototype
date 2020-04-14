@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "GLOMO website",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "GLOMO AB statically generated website",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -14,9 +14,28 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.28",
     "gatsby": "^2.20.12",
+    "gatsby-plugin-emotion": "^4.2.1",
+    "gatsby-plugin-manifest": "^2.3.3",
+    "gatsby-plugin-offline": "^3.1.2",
+    "gatsby-plugin-react-helmet": "^3.2.1",
+    "gatsby-plugin-sass": "^2.2.1",
+    "gatsby-plugin-typography": "^2.4.1",
+    "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-transformer-remark": "^2.7.1",
+    "glomo-boxes": "^1.8.21",
+    "node-sass": "^4.13.1",
+    "prop-types": "^15.7.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "react-intersection-observer": "^8.26.1",
+    "react-transition-group": "^4.3.0",
+    "react-typography": "^0.16.19",
+    "scrollmagic": "^2.0.7",
+    "typography": "^0.16.19",
+    "typography-theme-kirkham": "^0.16.19"
   },
   "devDependencies": {
     "prettier": "^1.19.1"

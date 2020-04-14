@@ -1,0 +1,21 @@
+.fadeTranslate {
+   &-enter {
+      opacity: 0;
+      //transform: translate3d(-30%, 0, 0);
+
+      &-active {
+         opacity: 1;
+         transition: all 0.84s cubic-bezier(0.215, 0.61, 0.355, 1);
+         transform: translate3d(0, 0, 0);
+      }
+   }
+
+   &-exit {
+      opacity: 1;
+      transition: opacity 0.42s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+      &-active {
+         opacity: 0;
+      }
+   }
+}

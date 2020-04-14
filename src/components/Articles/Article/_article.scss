@@ -1,0 +1,80 @@
+.article {
+   margin-top: 2rem;
+   @include device('tablet') {
+      margin-top: 2rem;
+   }
+   .article-full-width {
+      grid-column: 1 / span 12;
+   }
+   .article-inner {
+       @include device('desktop') {
+         grid-column: 4/span 6;
+      }
+   }
+   .article-author {
+      margin: 20px auto;
+      .author {
+      }
+   }
+   .article-image-container {
+      width: 100%;
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+      @include device('tablet') {
+         height: 490px;
+      }
+      .article-image {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translateX(-50%) translateY(-50%);
+         width: auto;
+         height: auto;
+         z-index: -1000;
+      }
+      .article-image-temp {
+         width: 100%;
+         height: 100%;
+         background-color: #ccc;
+      }
+   }
+   .blog-title {
+      .lead-in,
+      .article-title {
+      }
+      .article-title {
+         font-size: ms(1);
+         margin: 20px auto;
+      }
+      .lead-in {
+         color: #4a4a4a;
+         margin: 12px auto;
+         line-height: 1.5;
+         @include device('tablet') {
+            margin-bottom: 50px;
+         }
+      }
+   }
+   .text-paragraph {
+      a {
+         color: #c26720;
+         &:hover {
+            color: #864516;
+         }
+      }
+      img {
+         width: 100%;
+         height: auto;
+      }
+      @include device('desktop') {
+         width: 100%;
+      }
+   }
+   .article-footer {
+      margin: 0 0 60px 0;
+   }
+}
+.loading-article {
+    min-height: 1000px;
+}

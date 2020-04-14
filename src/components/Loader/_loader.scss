@@ -1,0 +1,50 @@
+.loader {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(255,255,255,0.9);
+   z-index: 999;
+   display: none;
+   &.show {
+      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   .loader-icon {
+
+      #load {
+        width: 100px;
+      }
+      // path {
+      //   fill: none;
+      //   stroke: #999;
+      //   stroke-width: 20;
+      //   transform-origin: center center;
+      //   animation: load 1s ease infinite;
+      // }
+      //
+      // .lt {
+      //    animation-name: lt;
+      // }
+      // .gt { animation-name: gt; animation-delay: -2s; }
+
+
+      // @keyframes slash {
+      //   0%, 30% { transform: translateX(-5px); }
+      //   50%, 60% { transform: translateX(5px); }
+      // }
+      //
+      // @keyframes lt {
+      //   0%, 30% { transform: none; }
+      //   50%, 60% { transform: translateX(-20px); }
+      // }
+      //
+      // @keyframes gt {
+      //   0%, 30% { transform: none; }
+      //   50%, 60% { transform: translateX(20px); }
+      // }
+   }
+}

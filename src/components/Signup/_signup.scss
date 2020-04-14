@@ -1,0 +1,128 @@
+.signup {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-content: center;
+   &__text {
+      position: relative;
+      width: 100%;
+      height: 96px;
+      margin: 10px auto 44px auto;
+      p {
+         margin: 0;
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+      }
+      .text {
+         opacity: 1;
+      }
+      .message {
+         opacity: 0;
+         transform: translateY(40px);
+         transition: all 400ms ease;
+      }
+      .closed {
+         opacity: 0;
+         transform: translateY(40px);
+      }
+      .open {
+         opacity: 1;
+         transform: translateY(0);
+      }
+   }
+   .form {
+      flex: 1;
+      height: 48px;
+      display: flex;
+      justify-content: space-between;
+      &.submitted {
+         opacity: 0.4;
+         &:focus {
+            opacity: 1;
+         }
+      }
+      .input {
+         width: 100%;
+         height: 100%;
+         margin-right: 20px;
+         padding: 0 6px;
+         font-size: ms(0);
+         color: #ffffff;
+         background: none;
+         border: none;
+         border-bottom: 2px solid #fff;
+         transition: all 200ms ease;
+         &::placeholder {
+            color: #fff;
+         }
+         &:focus {
+            outline: none;
+         }
+         &.submitting {
+            color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.2);
+            &::placeholder {
+               color: rgba(255, 255, 255, 0.2);
+            }
+         }
+      }
+      button[name='subscribe'] {
+         width: 44px;
+         border: 1px solid #fff !important;
+         &.submitting {
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+         }
+      }
+      .error {
+         animation: bounce 1s;
+         border-color: #eb3232;
+         &::placeholder {
+            color: #eb3232;
+         }
+      }
+      #load #loading-inner {
+         stroke: #fff;
+      }
+   }
+}
+@keyframes bounce {
+   0% {
+      transform: translateX(0px);
+      timing-function: ease-in;
+   }
+   37% {
+      transform: translateX(5px);
+      timing-function: ease-out;
+   }
+   55% {
+      transform: translateX(-5px);
+      timing-function: ease-in;
+   }
+   73% {
+      transform: translateX(4px);
+      timing-function: ease-out;
+   }
+   82% {
+      transform: translateX(-4px);
+      timing-function: ease-in;
+   }
+   91% {
+      transform: translateX(2px);
+      timing-function: ease-out;
+   }
+   96% {
+      transform: translateX(-2px);
+      timing-function: ease-in;
+   }
+   100% {
+      &::placeholder {
+         color: #fff;
+      }
+      border-color: #fff;
+      transform: translateX(0px);
+      timing-function: ease-in;
+   }
+}

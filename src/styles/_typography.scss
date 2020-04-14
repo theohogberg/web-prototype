@@ -1,0 +1,93 @@
+$modularscale: (
+   base: 1rem,
+   ratio: 1.414,
+   desktop: (ratio: 1.618)
+);
+
+* {
+   box-sizing: border-box;
+}
+
+body,
+html {
+   font-family: inherit;
+   text-rendering: optimizeLegibility;
+   margin: 0;
+   font-family: 'SwedenSans', sans-serif;
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 1.8;
+   text-rendering: geometricPrecision;
+   -webkit-font-smoothing: antialiased;
+   @media screen and (min-width: 430px) {
+      font-size: 18px;
+   }
+}
+
+a {
+   text-decoration: none;
+}
+
+p,
+h6 {
+   font-size: ms(0);
+   font-weight: 400;
+   &.bold {
+      font-weight: 700;
+   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+   font-weight: 900;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   margin: ms(1) auto;
+   &.uppercase {
+      text-transform: uppercase;
+   }
+}
+
+h6 {
+   font-size: ms(0);
+   line-height: 1.4;
+}
+h5 {
+   font-size: ms(0);
+   line-height: 1.4;
+}
+h4 {
+   font-size: ms(1);
+   line-height: 1.2;
+}
+h3 {
+   font-size: ms(2);
+   line-height: 1.2;
+}
+h2 {
+   font-size: ms(pow(3, 0.65));
+   line-height: 1.4;
+   @include device('tablet') {
+      font-size: ms(pow(3, 0.75), $thread: desktop);
+   }
+}
+h1 {
+   font-size: ms(4);
+   line-height: 1.2;
+}
+
+blockquote {
+   font-size: ms(2);
+   line-height: 1.4;
+   font-weight: 900;
+}

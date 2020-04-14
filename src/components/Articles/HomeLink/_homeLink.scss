@@ -1,0 +1,31 @@
+.home-link {
+  width: 100%;
+
+  margin: 35px 0 0 0;
+  display: grid;
+   grid-template-columns: repeat(12, 1fr);
+   grid-column-gap: 1rem;
+   grid-row-gap: 1rem;
+   @include device('desktop') {
+     margin: 69px 0 0 0;
+  }
+  &__link {
+     height: 55px;
+     grid-column: 2 / span 10;
+     @include device('desktop') {
+       height: 96px;
+       grid-column: 2 / span 1;
+     }
+
+       @include device('tablet') {
+         grid-column: 2 / span 1;
+       }
+         
+      @include device('phone') {
+         grid-column: 2 / span 2;
+     }
+   }
+   .home-link-logo {
+     height: 100%;
+  }
+}

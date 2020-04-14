@@ -1,0 +1,194 @@
+$image-wrapper-height: 25vh;
+
+.blog-feed-item {
+   width: 100%;
+   margin: 0 auto;
+   padding: 0.3rem;
+
+   &__header {
+      display: none;
+      color: #4a4a4a;
+
+      @include device('tablet') {
+         width: 100%;
+         display: block;
+      }
+   }
+
+   &__wrapper {
+      margin: 0 0.2rem;
+      display: flex;
+      flex-direction: column;
+   }
+   .articleInfo {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: 6px 0;
+      color: #4a4a4a;
+      font-size: ms(-1);
+      line-height: 1.4rem;
+   }
+   .image-wrapper {
+      width: 100%;
+      height: 13vh;
+      overflow: hidden;
+      position: relative;
+      background-color: #ccc;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @include device('tablet') {
+         height: $image-wrapper-height;
+         max-height: 400px;
+         margin: 0 0 10px 0;
+      }
+   }
+   .categories {
+      margin: 13px 0;
+      color: #4a4a4a;
+      &--container {
+         margin: 10px 0 0 0;
+
+         @include device('tablet') {
+            margin-top: 0;
+         }
+      }
+      &--home {
+         color: #acb3bc;
+         font-size: ms(0);
+         span {
+            font-size: ms(0);
+         }
+         &:hover {
+            color: #4a4a4a;
+         }
+      }
+   }
+   .text-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      @include device('tablet') {
+         width: 100%;
+         margin: 0 0 5rem 0;
+         padding: 0 0.5rem;
+      }
+      .title {
+         margin: 4vh 0 0 0;
+         display: -webkit-box;
+         -webkit-box-orient: vertical;
+         -webkit-line-clamp: 1;
+         overflow: hidden;
+
+         a {
+            font-weight: bold;
+            color: #38362e;
+            position: relative;
+            &:visited {
+               color: #38362e;
+            }
+            &:hover {
+               color: #000000;
+            }
+         }
+      }
+      .home-feed-item-author {
+         display: flex;
+         flex-direction: row;
+         margin: 3rem 0 0 0;
+
+         &__name {
+            font-weight: bold;
+            color: #212121;
+         }
+         &__date {
+            color: #4a4a4a;
+            margin: 0 0 0 0.8rem;
+         }
+      }
+
+      .excerpt {
+         width: 100%;
+         color: #4a4a4a;
+
+         @include device('tablet') {
+            flex: 1;
+         }
+      }
+      &--home {
+         color: #000;
+      }
+   }
+}
+.blog-feed-item-featured {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5);
+   display: flex;
+   flex-direction: column;
+   background-image: linear-gradient(
+      to top,
+      #000000,
+      rgba(0, 0, 0, 0.67) 5%,
+      rgba(0, 0, 0, 0) 50%
+   );
+   .categories-desktop {
+      width: 90%;
+      display: none;
+      margin: 5px auto;
+      color: #fff;
+      @include device('desktop') {
+         display: block;
+      }
+   }
+   .categories-mobile {
+      margin: 13px 0;
+      @include device('tablet') {
+         display: none;
+      }
+   }
+   &__header {
+      opacity: 0;
+      flex: 1;
+   }
+   &__wrapper {
+      width: 90%;
+      margin: 0 auto 1rem auto;
+
+      .image-wrapper {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         z-index: -1;
+         background-repeat: no-repeat;
+         background-size: cover;
+      }
+      .text-wrapper {
+         color: #fff;
+
+         .title {
+            width: 100%;
+            margin: 0;
+            a {
+               font-weight: bold;
+               color: #fff;
+               text-decoration: underline;
+               &:visited {
+                  color: #fff;
+                  text-decoration: underline;
+               }
+            }
+         }
+         .excerpt {
+            width: 100%;
+            opacity: 0.95;
+            margin-top: 0.5rem;
+         }
+      }
+   }
+}
