@@ -38,6 +38,7 @@
     "typography-theme-kirkham": "^0.16.19"
   },
   "devDependencies": {
+    "eslint-config-react-app": "^5.2.1",
     "prettier": "^1.19.1"
   },
   "repository": {

@@ -4,19 +4,6 @@ import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import Layout from "../components/layout"
 
-//all the shit from glomo-web
-// import PreFooter from "../components/PreFooter/PreFooter"
-// import FeaturedProse from "../components/FeaturedProse"
-// import NewsFeed from "../components/NewsFeed"
-// import SectionHeader from "../components/Headers"
-import LogosFeed from "../components/LogosFeed/LogosFeed"
-import ShowcaseTilesWrapper from "../components/ShowcaseTiles"
-import Testimonial from "../components/Testimonial"
-// import ArticleWrapper from "../components/Articles/ArticleWrapper"
-import PageFade from "../components/PageFade"
-import Footer from "../components/Footer"
-import Menu from "../components/Menu"
-
 export default ({ data }) => {
   return (
     <Layout>

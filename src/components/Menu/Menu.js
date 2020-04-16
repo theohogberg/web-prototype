@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from '@reach/router'
+import { Link } from 'gatsby'
 import Hamburger from './Hamburger'
 
 class Menu extends Component {
@@ -14,28 +14,28 @@ class Menu extends Component {
             { to: '/latest', name: 'latest' },
             { to: '/career', name: 'career' },
             { to: '/contact', name: 'contact' },
-         ],
+         ]
       }
    }
 
    freeze = e => {
-      if (
-         !document
+         if (
+            !document
             .getElementsByClassName('menu-container')[0]
             .contains(e.target)
-      ) {
-         e.preventDefault()
+            ) {
+            e.preventDefault()
       }
    }
 
    disableScroll = () => {
-      document.body.style.overflow = 'hidden' // Or toggle using class: document.body.className += "overflow-hidden-class";
+         document.body.style.overflow = 'hidden' // Or toggle using class: document.body.className += "overflow-hidden-class";
 
-      // Only accept touchmove from menu-container
-      document.addEventListener('touchmove', this.freeze, false)
+         // Only accept touchmove from menu-container
+         document.addEventListener('touchmove', this.freeze, false)
 
-      // Prevent background scrolling
-      document
+         // Prevent background scrolling
+         document
          .getElementsByClassName('menu-container')[0]
          .addEventListener('touchmove', function(e) {
             var top = this.scrollTop
@@ -56,10 +56,12 @@ class Menu extends Component {
       document.removeEventListener('touchmove', this.freeze)
       document.body.style.overflow = ''
    }
+
    close = () => {
       this.setState({ open: false })
       this.enableScroll()
    }
+
    toggleOpen = () => {
       if (!this.state.open) {
          this.setState({ open: true })
@@ -72,8 +74,8 @@ class Menu extends Component {
 
    render() {
       const navClassName = this.state.open
-         ? 'navigation-link active'
-         : 'navigation-link'
+      ? 'navigation-link active'
+      : 'navigation-link'
 
       return (
          <header className="header">
@@ -81,30 +83,20 @@ class Menu extends Component {
             <div className={`menu-container ${this.state.open ? 'open' : ''}`}>
                <div className="menu-container__top">
                   <div className="menu-lang" />
-                  {/* <div className="menu-close">
-                     <img className="menu-close__icon" src={cross} onClick={() => {
-                        this.close();
-                     }}/>
-                  </div> */}
                </div>
                <div className="menu-container__middle">
-                  <nav className="navigation">
-                     {this.state.links.map((link, index) => {
-                        const delay = `${index} * 0.12ms` // can't use currently as navlinks don't support accepting a style prop
-                        return (
-                           <div className={navClassName} key={index}>
-                              <Link
-                                 style={{ transitionDelay: delay }}
-                                 exact
-                                 onClick={this.close}
-                                 path={link.to}
-                              >
-                                 {link.name.toUpperCase()}
-                              </Link>
-                           </div>
-                        )
-                     })}
-                  </nav>
+               <nav className="navigation">
+               {this.state.links.map((link, index) => {
+                  //const delay = `${index} * 0.12ms`
+                  return (
+                     <div className={navClassName} key={index}>
+                        <Link onClick={this.close} path={link.to}>
+                           {link.name.toUpperCase()}
+                        </Link>
+                     </div>
+                  )
+               })}
+               </nav>
                </div>
             </div>
          </header>

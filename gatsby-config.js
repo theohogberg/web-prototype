@@ -7,8 +7,16 @@
 module.exports = {
   siteMetadata: {
     title: `GLOMO`,
-    description: `GLOMO public website for luring monkeys into bashing of keyboard`,
-    author: `Theo Högberg`,    
+    description: `GLOMO public website`,
+    author: `Theo Högberg`,
+    menuLinks:[
+      { link: '/', name: 'home' },
+      { link: '/about', name: 'about' },
+      { link: '/clients', name: 'clients' },
+      { link: '/latest', name: 'latest' },
+      { link: '/career', name: 'career' },
+      { link: '/contact', name: 'contact' }
+    ]
   },
   plugins: [
     {

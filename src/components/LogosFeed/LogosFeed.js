@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from '@reach/router'
+// flytta index logos typ hit
 import * as logos from '../../assets/img/logos'
 import Media from '../Media'
-
 const LogosFeed = props => {
    const { columns = 4 } = props
 
