@@ -1,0 +1,5 @@
+import "./src/styles/_fonts.scss"
+import "./src/styles/_global.scss"
+import "./src/styles/_mixins.scss"
+import "./src/styles/_reset.scss"
+import "./src/styles/_typography.scss"

@@ -26,6 +26,14 @@ module.exports = {
         path: `${__dirname}/output/`,
       },
     },
+    {
+    resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/
+        }
+      }
+    },
 		`gatsby-transformer-remark`,
     `gatsby-plugin-emotion`,
     {

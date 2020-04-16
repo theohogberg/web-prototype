@@ -3,7 +3,6 @@ import { css } from "@emotion/core"
 import { useStaticQuery, Link, graphql } from "gatsby"
 import { rhythm } from "../utils/typography"
 import Header from "./header"
-//import Footer from './Footer'
 
 export default ({ children }) => {
   const data = useStaticQuery(  

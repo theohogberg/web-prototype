@@ -47,20 +47,17 @@
 // Fonts
 // =============================================================================
 
-@include font-face("SwedenSans", assets/fonts/SwedenSans_webfonts/swedensans-webfont);
-
-@include font-face("SwedenSans", assets/fonts/SwedenSansBold_webfonts/swedensansbold-webfont, bold);
 
 @font-face {
     font-family: 'FaturaBold';
-    src: url('./assets/fonts/FuturaBold/FuturaStd-Bold/FuturaStd-Bold.otf');
+    src: url('../assets/fonts/FuturaBold/FuturaStd-Bold/FuturaStd-Bold.otf');
     font-weight: bold;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
     font-family: 'FaturaBold';
-    src: url('./assets/fonts/FuturaBold/FuturaStd-Medium/fonts/FuturaStd-Medium.ttf');
+    src: url('../assets/fonts/FuturaBold/FuturaStd-Medium/fonts/FuturaStd-Medium.ttf');
     font-weight: medium;
 	font-style: normal;
 	font-display: swap;

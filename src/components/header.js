@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 const Header = ({ siteTitle, menuLinks }) => (
   <header
     style={{
-      background: "rebeccapurple",
+      background: "#333",
       marginBottom: "1.45rem",
     }}
   >
